@@ -46,10 +46,12 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with: { fetch-depth: 0 }
-      - uses: actions/setup-go@v5
-        with: { go-version: '1.22' }
+      - uses: actions/setup-go@v7
+        with:
+          go-version: '1.22'
+          cache: false
       - run: go run github.com/nintechio/changefence@latest -base '${{ github.event.pull_request.base.sha }}'
 ```
 
