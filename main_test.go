@@ -236,7 +236,7 @@ func TestBasePolicyCannotBeWeakenedByWorktree(t *testing.T) {
 }
 
 func TestBaseConfigPathCannotEscapeRepository(t *testing.T) {
-	for _, input := range []string{"", "../policy.json", "/tmp/policy.json", "policies/*.json", ":(glob)policy.json", `dir\policy.json`, "policy\n.json"} {
+	for _, input := range []string{"", "../policy.json", "/tmp/policy.json", "C:/policy.json", "c:/policy.json", "policies/*.json", ":(glob)policy.json", `dir\policy.json`, "policy\n.json"} {
 		if _, err := validateConfigPath(input); err == nil {
 			t.Errorf("accepted %q", input)
 		}

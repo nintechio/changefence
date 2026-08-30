@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"path"
 	"path/filepath"
 	"strings"
 )
@@ -80,10 +81,11 @@ func decodePolicy(data []byte, policy *Policy) error {
 
 func validateConfigPath(configPath string) (string, error) {
 	containsControl := strings.IndexFunc(configPath, func(r rune) bool { return r < 0x20 || r == 0x7f }) >= 0
-	if configPath == "" || containsControl || strings.Contains(configPath, "\\") || strings.ContainsAny(configPath, "*?[") || strings.HasPrefix(configPath, ":") || filepath.IsAbs(configPath) {
+	windowsVolume := len(configPath) >= 2 && configPath[1] == ':' && ((configPath[0] >= 'A' && configPath[0] <= 'Z') || (configPath[0] >= 'a' && configPath[0] <= 'z'))
+	if configPath == "" || containsControl || strings.Contains(configPath, "\\") || strings.ContainsAny(configPath, "*?[") || strings.HasPrefix(configPath, ":") || strings.HasPrefix(configPath, "/") || windowsVolume || filepath.IsAbs(configPath) {
 		return "", errors.New("base policy path must be a non-empty repository-relative path")
 	}
-	clean := filepath.ToSlash(filepath.Clean(configPath))
+	clean := path.Clean(configPath)
 	if clean == "." || clean == ".." || strings.HasPrefix(clean, "../") {
 		return "", errors.New("base policy path must stay inside the repository")
 	}
