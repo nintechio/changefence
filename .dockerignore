@@ -1,0 +1,8 @@
+.git
+.github
+brandkit
+dist
+docs
+testdata
+*.md
+changefence

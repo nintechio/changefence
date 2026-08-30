@@ -1,23 +1,62 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/nintechio/changefence/main/policy.schema.json",
-  "title": "changefence policy",
+  "title": "Changefence policy",
+  "description": "A deterministic scope policy for a Git diff. Omitted fields inherit Changefence defaults; zero disables a numeric limit.",
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "max_files": { "type": "integer", "minimum": 0 },
-    "max_additions": { "type": "integer", "minimum": 0 },
-    "max_deletions": { "type": "integer", "minimum": 0 },
-    "max_lines_per_file": { "type": "integer", "minimum": 0 },
-    "allowed": { "$ref": "#/$defs/globs" },
-    "forbidden": { "$ref": "#/$defs/globs" },
-    "protected": { "$ref": "#/$defs/globs" },
+    "$schema": { "type": "string", "format": "uri-reference" },
+    "max_files": { "$ref": "#/$defs/limit" },
+    "max_additions": { "$ref": "#/$defs/limit" },
+    "max_deletions": { "$ref": "#/$defs/limit" },
+    "max_lines_per_file": { "$ref": "#/$defs/limit" },
+    "allowed": {
+      "description": "If non-empty, every changed path must match at least one glob.",
+      "$ref": "#/$defs/globs"
+    },
+    "forbidden": {
+      "description": "Changed paths that always produce a violation.",
+      "$ref": "#/$defs/globs"
+    },
+    "protected": {
+      "description": "Changed paths that require an explicit trusted approval.",
+      "$ref": "#/$defs/globs"
+    },
     "test_patterns": { "$ref": "#/$defs/globs" },
     "source_patterns": { "$ref": "#/$defs/globs" },
     "require_tests_for_source": { "type": "boolean" },
-    "allow_dependency_changes": { "type": "boolean" }
+    "allow_dependency_changes": { "type": "boolean" },
+    "allow_binary_changes": { "type": "boolean" },
+    "zones": {
+      "description": "Independent budgets or protection rules for high-risk repository areas.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/zone" }
+    }
   },
   "$defs": {
-    "globs": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true }
+    "limit": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "globs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "zone": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "patterns"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "patterns": { "$ref": "#/$defs/globs" },
+        "max_files": { "$ref": "#/$defs/limit" },
+        "max_additions": { "$ref": "#/$defs/limit" },
+        "max_deletions": { "$ref": "#/$defs/limit" },
+        "max_lines_per_file": { "$ref": "#/$defs/limit" },
+        "protected": { "type": "boolean" }
+      }
+    }
   }
 }

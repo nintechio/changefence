@@ -6,9 +6,19 @@
   "max_lines_per_file": 300,
   "allowed": ["src/**", "tests/**", "docs/**"],
   "forbidden": ["infra/prod/**"],
-  "protected": [".github/workflows/**", "CODEOWNERS", "SECURITY.md"],
+  "protected": [".changefence.json", ".github/workflows/**", "CODEOWNERS", "SECURITY.md"],
   "source_patterns": ["src/**"],
   "test_patterns": ["tests/**", "**/*_test.*", "**/*.test.*"],
   "require_tests_for_source": true,
-  "allow_dependency_changes": false
+  "allow_dependency_changes": false,
+  "allow_binary_changes": false,
+  "zones": [
+    {
+      "name": "database-migrations",
+      "patterns": ["db/migrations/**"],
+      "max_files": 2,
+      "max_additions": 200,
+      "protected": true
+    }
+  ]
 }

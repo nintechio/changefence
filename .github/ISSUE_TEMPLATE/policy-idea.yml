@@ -1,0 +1,31 @@
+name: Policy capability
+description: Propose a deterministic rule that catches a demonstrated scope problem.
+title: "policy: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Concrete problem
+      description: Show the change that should be caught and why it matters.
+    validations:
+      required: true
+  - type: textarea
+    id: gap
+    attributes:
+      label: Why existing rules are insufficient
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Proposed deterministic behavior
+      description: Include configuration, violation name, output, and exit behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: false_positives
+    attributes:
+      label: False positives and tradeoffs
+    validations:
+      required: true

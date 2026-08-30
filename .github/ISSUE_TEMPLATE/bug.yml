@@ -1,0 +1,56 @@
+name: Bug report
+description: Report a reproducible incorrect result or failure.
+title: "bug: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Please remove secrets and private repository content. Report security bypasses through a private Security Advisory.
+  - type: input
+    id: version
+    attributes:
+      label: Changefence version
+      placeholder: v1.0.0 or commit SHA
+    validations:
+      required: true
+  - type: dropdown
+    id: install
+    attributes:
+      label: Installation
+      options:
+        - GitHub Action
+        - Release binary
+        - go install
+        - Local source build
+    validations:
+      required: true
+  - type: textarea
+    id: policy
+    attributes:
+      label: Minimal policy and diff shape
+      description: Include only the fields and paths needed to reproduce the behavior.
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Actual and expected result
+      description: Include complete command output and exit code.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I removed secrets and private repository data.
+          required: true
+        - label: This is not a security vulnerability.
+          required: true

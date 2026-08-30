@@ -1,0 +1,16 @@
+name: Changefence
+description: Enforce a trusted, deterministic scope policy on every pull-request diff.
+author: Nintech
+branding:
+  icon: shield
+  color: purple
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - -config
+    - .changefence.json
+    - -policy-source
+    - base
+    - -format
+    - github

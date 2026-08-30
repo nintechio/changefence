@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640" role="img" aria-label="Changefence by Nintech">
+  <title>Changefence by Nintech</title>
+  <defs>
+    <linearGradient id="brand" x1="300" y1="330" x2="980" y2="210" gradientUnits="userSpaceOnUse"><stop stop-color="#60a5fa"/><stop offset="0.5" stop-color="#8b5cf6"/><stop offset="1" stop-color="#f97316"/></linearGradient>
+    <linearGradient id="markGrad" x1="15" y1="50" x2="49" y2="14"><stop stop-color="#60a5fa"/><stop offset="0.45" stop-color="#8b5cf6"/><stop offset="1" stop-color="#f97316"/></linearGradient>
+    <linearGradient id="hairline" x1="0" y1="0" x2="1280" y2="0"><stop stop-color="#60a5fa" stop-opacity="0"/><stop offset="0.35" stop-color="#60a5fa" stop-opacity="0.8"/><stop offset="0.65" stop-color="#8b5cf6" stop-opacity="0.8"/><stop offset="1" stop-color="#f97316" stop-opacity="0"/></linearGradient>
+    <radialGradient id="glowViolet"><stop stop-color="#8b5cf6" stop-opacity="0.4"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glowBlue"><stop stop-color="#4f7cff" stop-opacity="0.34"/><stop offset="1" stop-color="#4f7cff" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glowOrange"><stop stop-color="#f97316" stop-opacity="0.26"/><stop offset="1" stop-color="#f97316" stop-opacity="0"/></radialGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r="1.5" fill="#94a3b8" fill-opacity="0.06"/></pattern>
+  </defs>
+  <rect width="1280" height="640" fill="#060509"/><rect width="1280" height="640" fill="url(#dots)"/>
+  <ellipse cx="1080" cy="90" rx="460" ry="320" fill="url(#glowViolet)"/><ellipse cx="150" cy="560" rx="440" ry="300" fill="url(#glowBlue)"/><ellipse cx="1180" cy="620" rx="320" ry="240" fill="url(#glowOrange)"/>
+
+  <g transform="translate(566,70) scale(0.62)"><path d="M15 50 L15 27 C15 20.2 17.4 19.11 22.5 23.6 L41.5 40.4 C46.6 44.89 49 43.8 49 37 L49 14" fill="none" stroke="url(#markGrad)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="640" y="148" text-anchor="middle" font-family="'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif" font-size="19" font-weight="700" letter-spacing="6" fill="#f8fafc">NINTECH</text>
+  <text x="640" y="322" text-anchor="middle" font-family="'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif" font-size="112" font-weight="800" letter-spacing="-3" fill="url(#brand)">changefence</text>
+  <text x="640" y="382" text-anchor="middle" font-family="'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif" font-size="31" font-weight="500" fill="#e2e8f0">Trusted scope enforcement for every diff</text>
+
+  <g transform="translate(298 442)" font-family="'JetBrains Mono', ui-monospace, monospace">
+    <g fill="none" stroke-linecap="round"><path d="M0 48H230" stroke="#60a5fa" stroke-width="3"/><path d="M330 48H560" stroke="#34d399" stroke-width="3"/><path d="M330 96H496" stroke="#f97316" stroke-width="3"/></g>
+    <g stroke="#8b5cf6" stroke-width="4" opacity="0.9"><path d="M252 0v142"/><path d="M270 0v142"/><path d="M288 0v142"/></g>
+    <circle cx="0" cy="48" r="8" fill="#060509" stroke="#60a5fa" stroke-width="3"/><circle cx="230" cy="48" r="8" fill="#60a5fa"/>
+    <circle cx="330" cy="48" r="8" fill="#060509" stroke="#34d399" stroke-width="3"/><circle cx="560" cy="48" r="9" fill="#34d399"/>
+    <circle cx="330" cy="96" r="8" fill="#060509" stroke="#f97316" stroke-width="3"/><circle cx="496" cy="96" r="9" fill="#f97316"/>
+    <text x="270" y="166" text-anchor="middle" font-size="13" letter-spacing="1.7" fill="#a78bfa">POLICY BOUNDARY</text>
+    <text x="580" y="53" font-size="14" fill="#6ee7b7">PASS</text><text x="516" y="101" font-size="14" fill="#fdba74">REVIEW</text>
+  </g>
+  <rect y="636" width="1280" height="4" fill="url(#hairline)"/>
+</svg>

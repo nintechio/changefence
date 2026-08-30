@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 586" width="1100" height="586" role="img" aria-label="Changefence terminal demo">
+  <title>Changefence in action</title>
+  <defs>
+    <linearGradient id="titlebar" x1="0" y1="0" x2="1100" y2="0"><stop stop-color="#141320"/><stop offset="1" stop-color="#0d0c14"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1100" y2="0"><stop stop-color="#60a5fa" stop-opacity="0.55"/><stop offset="0.5" stop-color="#8b5cf6" stop-opacity="0.55"/><stop offset="1" stop-color="#f97316" stop-opacity="0.55"/></linearGradient>
+  </defs>
+  <rect x="0.5" y="0.5" width="1099" height="585" rx="14" fill="#08070d" stroke="url(#edge)"/>
+  <path d="M0 14.5 A14 14 0 0 1 14.5 0.5 H1085.5 A14 14 0 0 1 1099.5 14.5 V52 H0.5 Z" fill="url(#titlebar)"/>
+  <line x1="0" y1="52" x2="1100" y2="52" stroke="#fff" stroke-opacity="0.07"/>
+  <circle cx="28" cy="26" r="6" fill="#f87171"/><circle cx="50" cy="26" r="6" fill="#fbbf24"/><circle cx="72" cy="26" r="6" fill="#34d399"/>
+  <text x="550" y="31" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" fill="#8b93a7" letter-spacing="0.6">changefence — ~/projects/api</text>
+  <g xml:space="preserve" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15">
+    <text x="32" y="96"><tspan fill="#8b5cf6">$ </tspan><tspan fill="#f8fafc">changefence -base origin/main</tspan></text>
+    <text x="32" y="132"><tspan fill="#f87171">changefence 1.0.0: FAIL</tspan><tspan fill="#8b93a7"> · 3 files · </tspan><tspan fill="#34d399">+86</tspan><tspan fill="#8b93a7">/</tspan><tspan fill="#f87171">-12</tspan></text>
+    <text x="32" y="160"><tspan fill="#8b93a7">policy: .changefence.json (</tspan><tspan fill="#7cb8ff">base:8e14bc02f83a</tspan><tspan fill="#8b93a7">)</tspan></text>
+    <text x="32" y="202"><tspan fill="#f87171">FAIL  </tspan><tspan fill="#fdba74">protected</tspan><tspan fill="#cbd5e1">                 protected path requires separate review</tspan></text>
+    <text x="32" y="228" fill="#64748b">      (.github/workflows/deploy.yml)</text>
+    <text x="32" y="268"><tspan fill="#f87171">FAIL  </tspan><tspan fill="#c4b5fd">tests-required</tspan><tspan fill="#cbd5e1">             source changed without a test-file change</tspan></text>
+
+    <line x1="32" y1="306" x2="1068" y2="306" stroke="#fff" stroke-opacity="0.07"/>
+    <text x="32" y="352" fill="#475569"># after adding tests; the workflow change has explicit reviewer approval</text>
+    <text x="32" y="394"><tspan fill="#8b5cf6">$ </tspan><tspan fill="#f8fafc">changefence -base origin/main </tspan><tspan fill="#c4b5fd">\</tspan></text>
+    <text x="54" y="420"><tspan fill="#f8fafc">-approve 'protected:.github/workflows/**'</tspan></text>
+    <text x="32" y="462"><tspan fill="#34d399">changefence 1.0.0: PASS</tspan><tspan fill="#8b93a7"> · 4 files · </tspan><tspan fill="#34d399">+114</tspan><tspan fill="#8b93a7">/</tspan><tspan fill="#f87171">-12</tspan></text>
+    <text x="32" y="490"><tspan fill="#8b93a7">policy: .changefence.json (</tspan><tspan fill="#7cb8ff">base:8e14bc02f83a</tspan><tspan fill="#8b93a7">)</tspan></text>
+    <text x="32" y="532"><tspan fill="#34d399">ALLOW </tspan><tspan fill="#fdba74">protected</tspan><tspan fill="#cbd5e1">                 protected path requires separate review</tspan></text>
+    <text x="32" y="558" fill="#64748b">      (.github/workflows/deploy.yml)</text>
+  </g>
+</svg>
